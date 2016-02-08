@@ -1,0 +1,55 @@
+(function () {
+
+   'use strict';
+
+   (function ( $app ) {
+      return $app.controller('appController',
+         ['$scope', '$controller', '$http', '$sce', 'kambiAPIService', 'kambiWidgetService',
+            function ( $scope, $controller, $http, $sce, kambiAPIService, kambiWidgetService ) {
+
+               angular.extend(this, $controller('widgetCoreController', {
+                  '$scope': $scope
+               }));
+
+               // Default arguments, these will be overridden by the arguments from the widget api
+               $scope.defaultArgs = {
+                  'vine': {
+                     'title': 'FC Barcelona',
+                     'href': 'https://vine.co/v/iJ0OLlz3OlH'
+                  }
+               };
+
+               // The current height of the widget
+               $scope.currentHeight = 450;
+
+               // Inject Vine JS
+               var initVineJS = function () {
+                  var js = document.createElement('script');
+                  js.type = 'text/javascript';
+                  js.async = true;
+                  js.src = 'https://platform.vine.co/static/scripts/embed.js';
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(js, s);
+               };
+
+               // Build Vine's URL
+               var buildVineURL = function() {
+                  $scope.args.vine.href = $sce.trustAsResourceUrl($scope.args.vine.href + '/embed/simple');
+               }
+
+               // Call the init method in the coreWidgetController so that we setup everything using our overridden values
+               // The init-method returns a promise that resolves when all of the configurations are set, for instance the $scope.args variables
+               // so we can call our methods that require parameters from the widget settings after the init method is called
+               $scope.init().then(function () {
+
+                  // Build Vine iframe's URL
+                  buildVineURL();
+
+                  // Init Vine script
+                  initVineJS();
+
+               });
+
+            }]);
+   })(angular.module('vineWidget'));
+})($);
