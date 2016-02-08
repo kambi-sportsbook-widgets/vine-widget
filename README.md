@@ -13,9 +13,9 @@ __`client-widgets.js`__
     "order": 1,
     "widgetId": "Seed widget",
     "args": {
-        'vine': {
-            'title': 'FC Barcelona',
-            'href': 'https://vine.co/v/iJ0OLlz3OlH'
+        "vine": {
+            "title": "FC Barcelona",
+            "href": "https://vine.co/v/iJ0OLlz3OlH"
         }
     }
 },

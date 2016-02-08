@@ -15,7 +15,7 @@
                $scope.defaultArgs = {
                   'vine': {
                      'title': 'FC Barcelona',
-                     'href': 'https://vine.co/v/iJ0OLlz3OlH'
+                     'href': 'https://vine.co/v/iMFivzJlV9B'
                   }
                };
 
