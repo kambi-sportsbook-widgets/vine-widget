@@ -780,8 +780,11 @@ header img {
 }
 
 .vine iframe {
-  height: 100%;
-  min-height: 300px;
+  position: absolute;
+  top: 37px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 37px);
 }
 
 

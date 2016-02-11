@@ -32,12 +32,17 @@
                $scope.defaultArgs = {
                   'vine': {
                      'title': 'FC Barcelona',
-                     'href': 'https://vine.co/v/iJ0OLlz3OlH'
+                     'href': 'https://vine.co/v/i1YL03VM0a7'
                   }
                };
 
-               // The current height of the widget
-               $scope.currentHeight = 450;
+               // Setting a variable for the width and height
+               var kwcard = $('.kw-card'), widgetHeaderHeight = 37;
+
+               $(window).bind('resize', function() {
+                  $scope.width = kwcard.width();
+                  $scope.setWidgetHeight($scope.width + widgetHeaderHeight);
+               });
 
                // Inject Vine JS
                var initVineJS = function () {
@@ -49,18 +54,13 @@
                   s.parentNode.insertBefore(js, s);
                };
 
-               // Build Vine's URL
-               var buildVineURL = function() {
-                  $scope.args.vine.href = $sce.trustAsResourceUrl($scope.args.vine.href + '/embed/simple');
-               }
-
                // Call the init method in the coreWidgetController so that we setup everything using our overridden values
                // The init-method returns a promise that resolves when all of the configurations are set, for instance the $scope.args variables
                // so we can call our methods that require parameters from the widget settings after the init method is called
                $scope.init().then(function () {
 
                   // Build Vine iframe's URL
-                  buildVineURL();
+                  $scope.args.vine.href = $sce.trustAsResourceUrl($scope.args.vine.href + '/embed/simple');
 
                   // Init Vine script
                   initVineJS();
