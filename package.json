@@ -5,7 +5,7 @@
    "main": "dist/index.html",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "changelog": "changelog kambi-sportsbook-widgets/seed-project-widget all -m > CHANGELOG.md"
+      "changelog": "changelog kambi-sportsbook-widgets/vine-widget all -m > CHANGELOG.md"
    },
    "repository": {
       "type": "git",

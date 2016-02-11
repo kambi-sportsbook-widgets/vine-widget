@@ -36,7 +36,7 @@
                   }
                };
 
-               // Setting a variable for the width and height
+               // Setting variables for the width and height
                var kwcard = $('.kw-card'), widgetHeaderHeight = 37;
 
                $(window).bind('resize', function() {
