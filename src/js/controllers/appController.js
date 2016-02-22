@@ -22,7 +22,7 @@
                // Setting variables for the width and height
                var kwcard = $('.kw-card'), widgetHeaderHeight = 37;
 
-               $(window).bind('resize', function() {
+               $(window).bind('resize', function () {
                   $scope.width = kwcard.width();
                   $scope.setWidgetHeight($scope.width + widgetHeaderHeight);
                });

@@ -777,6 +777,8 @@ Copyright (c) 2015 Daniel Eden
 header img {
   display: block;
   width: 35px;
+  position: relative;
+  top: -2px;
 }
 
 .vine iframe {
