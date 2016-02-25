@@ -13,6 +13,8 @@ header {
       top: 37px; // The height of the widget header
       left: 0;
       width: 100%;
+      height: -moz-calc(100% - 37px);
+      height: -webkit-calc(100% - 37px);
       height: calc(100% - 37px);
    }
 }
