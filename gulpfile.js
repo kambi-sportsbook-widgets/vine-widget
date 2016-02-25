@@ -1,6 +1,6 @@
 (function () {
    var gulp, awspublish, rename, concat, uglify, notify, jshint, stripDebug, del, sourcemaps, cssnano, htmlReplace, sass, buildTemp, replace, npmLibs, path,
-      foreach, gulpFile, json_merger;
+      foreach, gulpFile, json_merger, install;
 
    gulp = require('gulp');
 
@@ -64,7 +64,7 @@
 
       return gulp.src(['./dist/**/*'])
          .pipe(rename(function ( path ) {
-            path.dirname = '/tournament/' + path.dirname;
+            path.dirname = '/vine/' + path.dirname;
          }))
          .pipe(publisher.publish(headers, {
             //force: true
