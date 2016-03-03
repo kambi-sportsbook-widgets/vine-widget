@@ -2,10 +2,10 @@
 
    'use strict';
 
-   (function ( $app ) {
+   (function ($app) {
       return $app.controller('appController',
          ['$scope', '$controller', '$http', '$sce', 'kambiAPIService', 'kambiWidgetService',
-            function ( $scope, $controller, $http, $sce, kambiAPIService, kambiWidgetService ) {
+            function ($scope, $controller, $http, $sce, kambiAPIService, kambiWidgetService) {
 
                angular.extend(this, $controller('widgetCoreController', {
                   '$scope': $scope
