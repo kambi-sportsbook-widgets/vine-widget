@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="vineWidget">
+<html>
 <head>
    <title>Vine Widget</title>
    <meta charset="UTF-8">
@@ -29,12 +29,11 @@
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min.js"></script>
    <script src="js/app.min.js"></script>
 
-   <script src="//kambi-cdn.globalmouth.com/lib/dist/js/app.min.js"></script>
 
    <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.8/kambi-widget-api.js"></script>
 </head>
 <body class="kw-body">
-<div class="kw-card l-flexbox l-vertical l-expander" ng-controller="appController">
+<div class="kw-card l-flexbox l-vertical l-expander">
 
    <!--Header-->
    <header class="kw-header l-pl-16 l-flexbox l-horizontal">
@@ -42,13 +41,13 @@
          <a target="_blank" href="https://vine.co">
          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTI2LjIgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEyNi4yIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6IzAwQjM4OTt9PC9zdHlsZT48Zz48Zz48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTMuMywxNS42YzMsMCw1LTIuMiw1LTUuMWMwLTIuOS0yLTUuMS01LTUuMWMtMywwLTUsMi01LDUuMUM0OC4zLDEzLjUsNTAuMywxNS42LDUzLjMsMTUuNnoiLz48L2c+PC9nPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjUuMSw0MC44Yy0yLDEuNC00LjUsMi40LTguMSwyLjRjLTMuNCwwLTYuMi0xLjQtNy42LTQuNGM5LjQsMC41LDE2LjctMy4zLDE2LjctMTAuMmMwLTUuMi00LTkuMS0xMC4zLTkuMWMtOC40LDAtMTIuOSw1LjUtMTQuOCwxMy40Yy0wLjksNC4xLTIuNyw5LjgtNS44LDkuOGMtMi4zLDAtMi40LTIuOS0yLjQtNS4zYzAtMS45LDAtNS4yLDAtNy44YzAtNi43LTMtOS44LTguOS05LjhjLTUuMywwLTgsNC05LjQsNy4zaC0wLjJsLTAuMS02LjVjLTEuNywwLTYuMywwLTYuMywwbC0wLjIsMy4yYy0wLjcsNy4zLTMuMywxOS04LjEsMTljLTIuNSwwLTMuMS0zLjctMy4xLTYuN1YyMC4zaC02LjRjLTMuNywzLTguNSw0LjctMTEuOSw0LjZjLTcuMi0wLjEtMTAuNS00LjgtMTAuNS0xMi4yYzAtMy42LDEuOC01LjksMy44LTUuOWMxLjksMCwzLjQsMS43LDMuNCw1LjFjMCwyLTAuNSw0LjEtMC45LDUuNGMxLjIsMi4xLDIuOSwzLDYuNywyLjNjMS4yLTIuNSwxLjktNS41LDEuOS04LjRDNDIuOCw0LDM4LjYsMCwzMS42LDBjLTcuMSwwLTExLjQsNS43LTExLjQsMTNjMCw3LjIsMy41LDEzLDkuMSwxNS44Yy0yLjMsNC43LTUuNyw5LjYtOC44LDEyLjdDMTQuOSwzNC42LDEwLjIsMjQuOSw4LjEsNy4xSDBjMy4xLDI5LjEsMTQuNyw0MC4zLDE3LjcsNDIuMWMxLjcsMSwzLjIsMSw0LjcsMC4xYzIuNC0xLjQsMTAtMTAsMTQtMTguNmMzLjYsMCw5LTEuMiwxMi40LTMuOGwwLjEsOC44YzAsOS40LDMuNCwxNCw5LDE0YzQuNCwwLDguNi00LjMsMTAuMy05LjdoMC4xbDAsOC4zbDcuMywwVjQwYzAtOS4zLDIuNS0xMy42LDYuMy0xMy42YzIuMiwwLDMuNywxLjQsMy43LDUuMWMwLDIuMiwwLDUuMiwwLDcuNGMwLDYuMywyLjgsMTAuOSw3LjgsMTAuOWM0LjYsMCw3LjctNC4xLDkuMi04LjFjMyw1LjcsOC42LDguMSwxMy41LDguMWMzLjcsMCw2LjctMC45LDktMi4xVjQwLjh6IE0xMTUuMSwyNi4yYzIuMSwwLDMuNiwwLjYsMy43LDIuNGMwLjIsMi43LTIuNSw1LjMtMTAuMSw1LjVDMTA5LDI5LjYsMTExLjYsMjYuMiwxMTUuMSwyNi4yeiIvPjwvZz48L3N2Zz4=" alt=""></a>
       </div>
-      <div>{{args.vine.title}}</div>
+      <div>{args.vine.title}</div>
       <div class="l-flexed"></div>
    </header>
 
    <!--Main-->
    <main class="vine">
-      <iframe ng-src="{{args.vine.href}}" frameborder="0"></iframe>
+      <iframe rv-src="href" frameborder="0"></iframe>
    </main>
 
 </div>

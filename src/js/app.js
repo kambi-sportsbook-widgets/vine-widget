@@ -1,15 +1,30 @@
 (function () {
+   'use strict';
 
-   var arrDependencies;
+   var VineWidget = CoreLibrary.Component.subclass({
+      defaultArgs: {
+         'vine': {
+            'title': 'FC Barcelona',
+            'href': 'https://vine.co/v/i1YL03VM0a7'
+         }
+      },
 
-   arrDependencies = [
-      'widgetCore',
-      'ngAnimate'
-   ];
+      constructor () {
+         CoreLibrary.Component.apply(this, arguments);
+      },
 
-   (function ($app) {
-      'use strict';
+      init () {
+         this.scope.href = this.scope.args.vine.href + '/embed/simple';
+         var js = document.createElement('script');
+         js.type = 'text/javascript';
+         js.async = true;
+         js.src = 'https://platform.vine.co/static/scripts/embed.js';
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(js, s);
+      }
+   });
 
-      return $app;
-   })(angular.module('vineWidget', arrDependencies));
-}).call(this);
+   var vineWidget = new VineWidget({
+      rootElement: 'html'
+   });
+})();
