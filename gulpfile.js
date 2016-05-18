@@ -10,6 +10,4 @@
 
    // Add or override your gulp tasks here​
 
-   gulp.task('compile-translations', function () { });
-
 }).call(this);
