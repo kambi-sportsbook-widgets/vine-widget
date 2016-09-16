@@ -1,6 +1,6 @@
 # vine-widget
 
-![](https://github.com/kambi-sportsbook-widgets/vine-widget/blob/master/screenshot.png?raw=true)
+![](https://github.com/kambi-sportsbook-widgets/vine-widget/blob/master/screenshot.jpg?raw=true)
 
 A widget that shows an embedded vine video.
 
