@@ -1,38 +1,25 @@
 # vine-widget
 
-A widget to display a Vine post via the settings configuration
+![](https://github.com/kambi-sportsbook-widgets/vine-widget/blob/master/screenshot.png?raw=true)
 
-## Configuration example:
+A widget that shows an embedded vine video.
 
-__`client-widgets.js`__
+This is a C-widget that means that it is not provided by Kambi directly, instead the operators that want to use this need to build and host the widget themselves. Please see Build Instructions.
 
+## Configuration
+
+Arguments and default values:
 ```json
-
-...
-{
-    "order": 1,
-    "widgetId": "Vine widget",
-    "args": {
-        "vine": {
-            "title": "FC Barcelona",
-            "href": "https://vine.co/v/iJ0OLlz3OlH"
-        }
-    }
-},
-...
-
+"args": {
+    "title": "",
+    "height": 400,
+    "vineUrl": "https://vine.co/v/i1YL03VM0a7"
+}
 ```
+1. title - string - title to show in the widget
+2. height - number - height of the video
+3. vineUrl - string - url to video
 
-Please visit http://widgets.kambi.com/tool/ for more info
+### Build Instructions
 
-### The widget accepts the following parameter/s:
-
-# Other tools
-
-For setting up sass maps, follow this tutorial https://www.hackmonkey.com/2014/sep/configuring-css-source-maps-compass
-
-To use Scss Lint, run "gem install scss_lint"
-
-# Changelog
-
-changelog can be found [here](CHANGELOG.md)
+Please refer to the [core-library](https://github.com/kambi-sportsbook-widgets/widget-core-library)
